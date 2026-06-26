@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/freelance-marketplace/static/css/main.9f93c803.css",
+    "main.js": "/freelance-marketplace/static/js/main.fcbb80b4.js",
+    "index.html": "/freelance-marketplace/index.html",
+    "main.9f93c803.css.map": "/freelance-marketplace/static/css/main.9f93c803.css.map",
+    "main.fcbb80b4.js.map": "/freelance-marketplace/static/js/main.fcbb80b4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9f93c803.css",
+    "static/js/main.fcbb80b4.js"
+  ]
+}
