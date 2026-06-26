@@ -11,7 +11,7 @@ import SignUp from "./Pages/SignUp";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/freelance-marketplace">
       <Navbar />
 
       <Routes>

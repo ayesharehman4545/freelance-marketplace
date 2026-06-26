@@ -9,7 +9,7 @@ const Navbar = () => {
 
           <Link
             className="navbar-brand d-flex align-items-center fw-bold logo" to="/" >
-            <img src="/images/icon.png" alt="TechAura" />
+           <img src={process.env.PUBLIC_URL + "/images/icon.png"} alt="TechAura"/>
             <span>TechAura</span>
           </Link>
 
