@@ -4,51 +4,37 @@ body {
   color: white;
 }
 
-@media (max-width: 991px) {
-
-  .mobile-menu {
-    width: 280px;
-  }
-
-  .navbar-nav {
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .nav-custom {
-    font-size: 1rem;
-    width: 100%;
-    padding: 12px 0 !important;
-  }
-
-  .logo span {
-    font-size: 1.3rem;
-  }
-
-  .logo img {
-    width: 30px;
-    height: 30px;
-  }
-
-  .offcanvas-body .btn {
-    width: 100%;
-  }
+.nav-btn {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.4);
 }
 
-@media (max-width: 576px) {
+.nav-btn:hover {
+  background: #fff;
+  color: #272727;
+  transform: translateY(-2px);
+}
 
-  .logo span {
-    font-size: 1.1rem;
-  }
+.nav-btn-signup {
+  transition: all 0.3s ease;
+}
 
-  .logo img {
-    width: 26px;
-    height: 26px;
-  }
+.nav-btn-signup:hover {
+  background: #ffb300;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
 
-  .custom-nav {
-    padding: 8px 0;
-  }
+.navbar-brand span {
+  letter-spacing: 0.5px;
+}
+
+.navbar-brand img {
+  transition: 0.3s;
+}
+
+.navbar-brand:hover img {
+  transform: scale(1.05);
 }
 
 .hero-img {

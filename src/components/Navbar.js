@@ -1,281 +1,102 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+import "../App.css";
 
 const Navbar = () => {
+  const closeMenu = () => {
+  const navbar = document.getElementById("navbarNav");
+  if (navbar.classList.contains("show")) {
+    navbar.classList.remove("show");
+  }
+};
   return (
-    <>
-      <nav className="navbar navbar-expand-lg fixed-top custom-nav">
-        <div className="container">
+    <nav
+      className="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm"
+      style={{
+        backdropFilter: "blur(8px)",
+        backgroundColor: "rgba(0, 0, 0, 0.4)",
+        transition: "background-color 0.3s ease", }}>
+     <div className="container">
+  <Link className="navbar-brand fw-bold d-flex align-items-center gap-2" to="/" >
+    <img src={process.env.PUBLIC_URL + "/images/icon.png"}
+      alt="TechAura Logo"
+      style={{
+        height: "70px",
+        width: "auto",
+        borderRadius: "6px",
+        objectFit: "contain", }}/>
+    <span className="fs-4 fw-bold text-white"> TechAura </span>
+  </Link>
 
-          <Link
-            className="navbar-brand d-flex align-items-center fw-bold logo" to="/" >
-           <img src={process.env.PUBLIC_URL + "/images/icon.png"} alt="TechAura"/>
-            <span>TechAura</span>
-          </Link>
+        <button
+          className="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav" >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-          <button
-            className="navbar-toggler border-0"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar">
-            <span className="navbar-toggler-icon"></span>
-          </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto align-items-center">
 
-          <div className="collapse navbar-collapse d-none d-lg-flex">
-
-            <ul className="navbar-nav ms-4">
-              <li className="nav-item">
-                <NavLink className="nav-link nav-custom" to="/">
-                  Home
-                </NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink className="nav-link nav-custom" to="/services">
-                  Services
-                </NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink className="nav-link nav-custom"  to="/seller" >
-                  Seller Profile
-                </NavLink>
-              </li>
-              
-               <li className="nav-item">
-                <NavLink className="nav-link nav-custom" to="/service-details" >
-                  Service Details
-                </NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink className="nav-link nav-custom"   to="/about" >
-                  About
-                </NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink className="nav-link nav-custom"   to="/contact" >
-                  Contact
-                </NavLink>
-              </li>
-
-            </ul>
-
-            <div className="ms-auto d-flex gap-2 auth-btns">
-
-              <Link to="/login" className="btn btn-outline-light btn-sm px-3" >
-                Login
-              </Link>
-              <Link to="/signup" className="btn btn-warning btn-sm px-3 fw-bold">
-                Sign Up
-              </Link>
-
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      <div
-        className="offcanvas offcanvas-start mobile-menu"
-        tabIndex="-1"
-        id="offcanvasNavbar">
-        <div className="offcanvas-header">
-          <h5 className="text-white fw-bold">TechAura</h5>
-
-          <button type="button" className="btn-close " data-bs-dismiss="offcanvas" ></button>
-        </div>
-
-        <div className="offcanvas-body">
-          <ul className="navbar-nav">
-
-            <li className="nav-item">
-              <NavLink to="/" className="nav-link nav-custom"  data-bs-dismiss="offcanvas">
-                Home
-              </NavLink>
+            <li className="nav-item px-2">
+             <Link className="nav-link fw-medium text-warning" to="/"  onClick={closeMenu} >
+              Home
+            </Link>
             </li>
 
-            <li className="nav-item">
-              <NavLink to="/services" className="nav-link nav-custom" data-bs-dismiss="offcanvas" >
+            <li className="nav-item px-2">
+                <Link className="nav-link fw-medium text-white-50"  to="/services" onClick={closeMenu}>
                 Services
-              </NavLink>
+                </Link>
             </li>
 
-            <li className="nav-item">
-              <NavLink to="/seller" className="nav-link nav-custom" data-bs-dismiss="offcanvas">
+            <li className="nav-item px-2">
+                <Link className="nav-link fw-medium text-white-50"  to="/seller" onClick={closeMenu}>
                 Seller Profile
-              </NavLink>
+                </Link>
             </li>
-            
-             <li className="nav-item">
-              <NavLink to="/service-details" className="nav-link nav-custom" data-bs-dismiss="offcanvas">
+
+            <li className="nav-item px-2">
+                <Link className="nav-link fw-medium text-white-50"  to="/service-details" onClick={closeMenu}>
                 Service Details
-              </NavLink>
+                </Link>
             </li>
 
-            <li className="nav-item">
-              <NavLink to="/about" className="nav-link nav-custom" data-bs-dismiss="offcanvas">
+            <li className="nav-item px-2">
+              <Link className="nav-link fw-medium text-white-50" to="/about"onClick={closeMenu}>
                 About
-              </NavLink>
+              </Link>
             </li>
 
-            <li className="nav-item"> 
-              <NavLink  to="/contact" className="nav-link nav-custom" data-bs-dismiss="offcanvas" >
-                Contact
-              </NavLink>
+            <li className="nav-item px-2">
+              <Link className="nav-link fw-medium text-white-50"  to="/contact" onClick={closeMenu}>
+              Contact
+              </Link>
             </li>
 
-            <div className="mt-4 d-flex flex-column gap-2">
-              <Link to="/login" className="btn btn-outline-light w-100" data-bs-dismiss="offcanvas" >
-                Login
-              </Link>
+          <li className="nav-item ms-lg-3 mb-2 mb-lg-0">
+  <Link to="/login" onClick={closeMenu} className="text-decoration-none">
+    <button className="btn btn-outline-light btn-sm px-4 rounded-pill fw-semibold shadow-sm nav-btn">
+      Login
+    </button>
+  </Link>
+</li>
 
-              <Link to="/signup" className="btn btn-warning w-100 fw-bold"  data-bs-dismiss="offcanvas" >
-                Sign Up
-              </Link>
-
-            </div>
+<li className="nav-item ms-lg-3">
+  <Link to="/signup" onClick={closeMenu} className="text-decoration-none">
+    <button className="btn btn-warning btn-sm px-4 rounded-pill fw-bold shadow-sm nav-btn-signup text-white">
+      Sign Up
+    </button>
+  </Link>
+</li>
 
           </ul>
         </div>
+
       </div>
-
-      <style>{`
-        html{
-          scroll-behavior:smooth;
-        }
-
-        .custom-nav {
-          background: rgba(0,0,0,0.6);
-          backdrop-filter: blur(12px);
-        }
-
-        .logo{
-          color:#fff !important;
-          font-size:2rem;
-          text-decoration:none;
-        }
-
-        .logo img{
-          width:38px;
-          height:38px;
-          margin-right:10px;
-        }
-
-        .logo span{
-          color:white;
-          font-weight:700;
-        }
-
-        .navbar-nav{
-          display:flex;
-          align-items:center;
-          gap:15px;
-        }
-
-        .nav-custom{
-          color:white !important;
-          font-size:1.15rem;
-          font-weight:600;
-          position:relative;
-          padding:10px 8px !important;
-          transition:.3s;
-        }
-
-        .nav-custom:hover{
-          color:#ff9f1c !important;
-        }
-
-        .nav-custom.active{
-          color:#ff9f1c !important;
-        }
-
-        .nav-custom.active::after{
-          content:"";
-          position:absolute;
-          left:0;
-          top:50%;
-          transform:translateY(-50%);
-          width:4px;
-          height:36px;
-          background:#ff9f1c;
-          border-radius:20px;
-        }
-
-        .auth-btns .btn{
-          border-radius:25px;
-          transition:0.3s;
-        }
-
-        .auth-btns .btn:hover{
-          transform:translateY(-2px);
-        }
-
-        .navbar-toggler{
-          box-shadow:none !important;
-        }
-
-        .navbar-toggler-icon{
-          filter:invert(1);
-        }
-
-       .mobile-menu{
-        background:#ffffff;
-         color:#000;
-        }
-
-        .mobile-menu .offcanvas-header{
-         background:#fff;
-         border-bottom:1px solid #ddd;
-        }
-
-        .mobile-menu h5{
-        color:#000 !important;
-        }
-
-        .mobile-menu .nav-custom{
-        color:#000 !important;
-        }
-
-        .mobile-menu .nav-custom:hover{
-        color:#ff9f1c !important;
-        }
-
-        .mobile-menu .nav-custom.active{
-         color:#ff9f1c !important;
-        }
-
-        .mobile-menu .btn-outline-light{
-        border:1px solid #000;
-        color:#000;
-        }
-
-        .mobile-menu .btn-outline-light:hover{
-        background:#000;
-        color:#fff;
-        }
-
-        @media(max-width:991px){
-          .custom-nav{
-            padding:12px 0;
-          }
-
-          .logo{
-            font-size:1.6rem;
-          }
-
-          .logo img{
-            width:32px;
-            height:32px;
-          }
-
-          .nav-custom.active::after{
-            width:4px;
-            height:28px;
-          }
-        }
-      `}</style>
-    </>
+    </nav>
   );
 };
 
